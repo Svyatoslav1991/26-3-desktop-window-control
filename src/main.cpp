@@ -1,9 +1,9 @@
-#include "window.h"
+#include "screen.h"
 
 int main() {
 	std::cout << "\tTASK 26.3 DESKTOP WINDOW CONTROL\n\n";
 
-	Window window;
+	Screen screen;
 	
 	std::string action;
 
@@ -24,9 +24,9 @@ int main() {
 			std::cout << "Enter how much to move along the y-axis\n";
 			y = myCin<decltype(y)>();
 
-			window.move(x, y);
+			screen.moveWindow(x, y);
 
-			std::cout << "New window coordinates ( " << window.getX() << ", " << window.getY() << ").\n";
+			std::cout << "New window coordinates ( " << screen.getWindowX() << ", " << screen.getWindowY() << ").\n";
 		}
 		else if (action == "resize")
 		{
@@ -38,13 +38,13 @@ int main() {
 			std::cout << "New width\n";
 			width = myCin<decltype(width)>();
 
-			window.resize(height, width);
+			screen.resizeWindow(height, width);
 
-			std::cout << "New window height is " << window.getHeight() << ", new window width is " << window.getWidth() << ".\n";
+			std::cout << "New window height is " << screen.getWindowHeight() << ", new window width is " << screen.getWindowWidth() << ".\n";
 		}
 		else if (action == "display")
 		{
-			window.display();
+			screen.display();
 		}
 		else if (action == "exit")
 		{
